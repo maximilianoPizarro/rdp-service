@@ -24,7 +24,7 @@ import com.modelo.User;
 public class UserRest {
 	
 	//private static String url="http://10.68.11.218:8080/rdp";
-	private static String url="/rdp";
+	private static String url="";
 	private static Properties log4jProp = new Properties();
 
 	private void iniciaOperacion() throws IOException {
@@ -39,7 +39,7 @@ public class UserRest {
 
 		iniciaOperacion();
 		HttpClient httpclient = HttpClients.createDefault();
-		HttpPost httppost = new HttpPost("http://"+log4jProp.getProperty("server")+":"+log4jProp.getProperty("port")+url +"/autenticar/");
+		HttpPost httppost = new HttpPost("https://"+log4jProp.getProperty("server")+url +"/autenticar/");
 		// Request parameters and other properties.
 		List<NameValuePair> params = new ArrayList<NameValuePair>(2);
 		params.add(new BasicNameValuePair("ssoId", user));
@@ -61,7 +61,7 @@ public class UserRest {
 		
 			iniciaOperacion();
 			HttpClient httpclient = HttpClients.createDefault();
-			HttpPost httppost = new HttpPost("http://"+log4jProp.getProperty("server")+":"+log4jProp.getProperty("port")+url +"/user/");
+			HttpPost httppost = new HttpPost("https://"+log4jProp.getProperty("server")+url +"/user/");
 			List<NameValuePair> params = new ArrayList<NameValuePair>(1);
 			params.add(new BasicNameValuePair("id", String.valueOf(idUser)));
 			httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));

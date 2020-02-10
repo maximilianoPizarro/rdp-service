@@ -27,7 +27,7 @@ import com.modelo.HostUpdate;
 public class HostRest {
 
 	//private static String url = "http://10.68.11.218:8080/rdp/abm-host";
-	private static String url = "/rdp/abm-host";
+	private static String url = "/abm-host";
 	private static Properties log4jProp = new Properties();
 
 
@@ -48,7 +48,7 @@ public class HostRest {
 		try {
 			iniciaOperacion();
 			
-			HttpPost httppost = new HttpPost("http://"+log4jProp.getProperty("server")+":"+log4jProp.getProperty("port")+url +"/host-alta/");
+			HttpPost httppost = new HttpPost("https://"+log4jProp.getProperty("server")+url +"/host-alta/");
 			List<NameValuePair> params = new ArrayList<NameValuePair>(2);
 			params.add(new BasicNameValuePair("host", new Gson().toJson(objeto)));
 			params.add(new BasicNameValuePair("ip", ip));
