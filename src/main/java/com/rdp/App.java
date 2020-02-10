@@ -93,7 +93,7 @@ public class App extends Application {
 				//URL url = new URL("http://10.68.11.218/rdp-agente/static/favicon_ba.png");
 				image = ImageIO.read(url);
 				//icono de la url
-				stage.getIcons().add(new Image("http://10.68.11.218/rdp-agente/static/favicon_ba.png"));
+				stage.getIcons().add(new Image("https://rdp-gcba.herokuapp.com/static/rdp-agente/static/favicon_ba.png"));
 				if(stage.getIcons().isEmpty())
 					stage.getIcons().add(new Image("/static/favicon_ba.png"));
 				

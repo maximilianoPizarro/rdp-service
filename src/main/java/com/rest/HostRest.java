@@ -73,7 +73,7 @@ public class HostRest {
 		Host objeto = null;
 		try {
 			iniciaOperacion();
-			HttpPost httppost = new HttpPost("http://"+log4jProp.getProperty("server")+":"+log4jProp.getProperty("port")+url+"/host/");
+			HttpPost httppost = new HttpPost("https://"+log4jProp.getProperty("server")+url+"/host/");
 			List<NameValuePair> params = new ArrayList<NameValuePair>(1);
 			params.add(new BasicNameValuePair("id", String.valueOf(idHost)));
 			httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
@@ -97,7 +97,7 @@ public class HostRest {
 		Host objeto = null;
 		try {
 			iniciaOperacion();
-			HttpPost httppost = new HttpPost("http://"+log4jProp.getProperty("server")+":"+log4jProp.getProperty("port")+url+"/host-mac/");
+			HttpPost httppost = new HttpPost("https://"+log4jProp.getProperty("server")+url+"/host-mac/");
 			List<NameValuePair> params = new ArrayList<NameValuePair>(1);
 			params.add(new BasicNameValuePair("mac", mac));
 			httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
@@ -127,7 +127,7 @@ public class HostRest {
 		boolean respuesta = false;
 		try {
 			iniciaOperacion();
-			HttpPost httppost = new HttpPost("http://"+log4jProp.getProperty("server")+":"+log4jProp.getProperty("port")+url +"/host-update/");
+			HttpPost httppost = new HttpPost("https://"+log4jProp.getProperty("server")+url+"/host-update/");
 			List<NameValuePair> params = new ArrayList<NameValuePair>(1);
 			params.add(new BasicNameValuePair("host", new Gson().toJson(objeto)));
 
@@ -150,7 +150,7 @@ public class HostRest {
 		boolean respuesta = false;
 		try {
 			iniciaOperacion();
-			HttpPost httppost = new HttpPost("http://"+log4jProp.getProperty("server")+":"+log4jProp.getProperty("port")+url+ "/host-last-update/");
+			HttpPost httppost = new HttpPost("https://"+log4jProp.getProperty("server")+url+ "/host-last-update/");
 			List<NameValuePair> params = new ArrayList<NameValuePair>(1);
 			params.add(new BasicNameValuePair("host", new Gson().toJson(objeto)));
 
@@ -172,7 +172,7 @@ public class HostRest {
 	public void enviarEmail(Host hostSinModificar, Host hostMemoria) throws IOException {
 		try {
 			iniciaOperacion();
-			HttpPost httppost = new HttpPost("http://"+log4jProp.getProperty("server")+":"+log4jProp.getProperty("port")+url +"/enviar-email-update/");
+			HttpPost httppost = new HttpPost("https://"+log4jProp.getProperty("server")+url +"/enviar-email-update/");
 			List<NameValuePair> params = new ArrayList<NameValuePair>(2);
 			params.add(new BasicNameValuePair("hostSinModificar", new Gson().toJson(hostSinModificar)));
 			params.add(new BasicNameValuePair("hostMemoria", new Gson().toJson(hostMemoria)));
